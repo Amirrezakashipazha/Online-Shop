@@ -1,0 +1,25 @@
+.itembasket {
+  background: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin-bottom: 8px;
+  position: relative;
+  box-shadow: 0px -1px 10px 3px rgb(230, 230, 230);
+    -webkit-box-shadow: 0px -1px 10px 3px rgb(230, 230, 230);
+    -moz-box-shadow: 0px -1px 10px 3pxrgb (230, 230, 230);
+}
+.itembasket img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+h5 {
+  margin: 0 15px;
+}
+.itembasket p {
+  position: absolute;
+  left: 10px;
+  top: -5px;
+}

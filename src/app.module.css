@@ -1,0 +1,15 @@
+html , body{
+    margin: 0;
+    padding: 0;
+}
+.App{
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+}
+.containerItem{
+    display: flex;
+    justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 100px;
+}

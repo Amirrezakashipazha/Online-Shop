@@ -1,0 +1,27 @@
+.basket {
+  width: 350px;
+  height: 250px;
+  padding: 15px;
+  background: #fff;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  box-shadow: 0px -1px 10px 3px rgb(230, 230, 230);
+  -webkit-box-shadow: 0px -1px 10px 3px rgb(230, 230, 230);
+  -moz-box-shadow: 0px -1px 10px 3pxrgb (230, 230, 230);
+  margin: 3vw 0 0 3vw;
+}
+@media (max-width: 568px) {
+  .basket {
+    width:calc(100% - 12vw);
+    margin: 3vw 0 0 3vw;
+  }
+}
+.basket::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 50px;
+  background: #e2e2e2;
+}
+.basket::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background: #7e7e7e;
+}
