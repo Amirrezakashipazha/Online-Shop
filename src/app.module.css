@@ -1,15 +1,38 @@
-html , body{
-    margin: 0;
-    padding: 0;
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
-.App{
-    display: flex;
-    flex-direction: column;
-    align-items: space-between;
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
 }
-.containerItem{
-    display: flex;
-    justify-content: space-evenly;
+.containerItem {
+  display: flex;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   margin-top: 100px;
+}
+
+.animation {
+  animation: identifier 0.3s ease;
+}
+@keyframes identifier {
+0% {
+  transform: rotate(0);
+}
+
+25% {
+  transform:rotate(6deg);
+}
+50% {
+  transform:rotate(0deg);
+}
+75% {
+  transform:rotate(-6deg);
+}
+100% {
+  transform:rotate(0);
+}
 }

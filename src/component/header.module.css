@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  background: #f5f5f5;
+}
+.btn {
+  position: relative;
+  border: 1px solid #000;
+  background: #fff;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.btn span {
+  position: absolute;
+  left: 60px;
+  bottom: 20px;
+  background: #6d6d6d;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 50%;
+}
+.animation {
+    animation: identifier 0.3s ease;
+}
+@keyframes identifier {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

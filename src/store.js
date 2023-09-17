@@ -11,11 +11,11 @@ const ItemsSlice = createSlice({
       );
       if (existingItem) {
         existingItem.number++;
-        existingItem.price = action.payload.ValueProduct.price * existingItem.number;
-        state.TotalAmount += action.payload.ValueProduct.price ;
-        console.log(existingItem.number);
+        existingItem.price =
+          action.payload.ValueProduct.price * existingItem.number;
+        state.TotalAmount += action.payload.ValueProduct.price;
       } else {
-        state.TotalAmount += action.payload.ValueProduct.price ;
+        state.TotalAmount += action.payload.ValueProduct.price;
         state.ProductsItem.push(action.payload.ValueProduct);
       }
     },
@@ -27,7 +27,22 @@ const ItemsSlice = createSlice({
         existingItem.number--;
         existingItem.price =
           action.payload.ValueProduct.price * existingItem.number;
-        state.TotalAmount -= action.payload.ValueProduct.price ;
+        state.TotalAmount -= action.payload.ValueProduct.price;
+        if (existingItem.number === 0) {
+          state.ProductsItem = state.ProductsItem.filter(
+            (item) => item.id !== existingItem.id
+          );
+        }
+      }
+    },
+    DeleteItem: (state, action) => {
+      const existingItem = state.ProductsItem.find(
+        (item) => item.id === action.payload.ValueProduct.id
+      );
+      if (existingItem) {
+        state.TotalAmount -= action.payload.ValueProduct.price;
+        existingItem.number=0;
+        existingItem.price =0;
         if (existingItem.number === 0) {
           state.ProductsItem = state.ProductsItem.filter(
             (item) => item.id !== existingItem.id
@@ -38,7 +53,7 @@ const ItemsSlice = createSlice({
   },
 });
 
-export const { AddItem, RemoveItem } = ItemsSlice.actions;
+export const { AddItem, RemoveItem ,DeleteItem} = ItemsSlice.actions;
 
 export const store = configureStore({
   reducer: {
