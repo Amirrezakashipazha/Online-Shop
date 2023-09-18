@@ -1,20 +1,24 @@
 .basket {
-  width: 350px;
+  width: 400px;
   height: 250px;
   padding: 15px;
   background: #fff;
   overflow-x: hidden;
   overflow-y: scroll;
   box-shadow: 0px -1px 10px 3px rgb(230, 230, 230);
-  
   position: absolute;
   right: 0;
-  top: 60px;
+  top: 40px;
 }
 @media (max-width: 568px) {
   .basket {
-    width:calc(100% - 12vw);
-    margin: 3vw 0 0 3vw;
+    min-width: 100%;
+    width: 80vw;
+    /* margin: 3vw 0 0 3vw;
+     */
+     right: -40px;
+  overflow-x: scroll;
+
   }
 }
 .basket::-webkit-scrollbar {

@@ -1,14 +1,23 @@
-.itembasket {
+.itembasket{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;  
+  min-width: 350px;
   background: #fff;
-  width: 100%;
+  box-shadow: 0px -1px 10px 3px rgb(230, 230, 230);
+  padding-left: 8px;
+  margin-bottom: 8px;
+}
+.itembasket div{
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  margin-bottom: 8px;
   position: relative;
-  box-shadow: 0px -1px 10px 3px rgb(230, 230, 230);
 }
-.itembasket img {
+
+.itembasket div img {
   width: 40px;
   height: 40px;
   object-fit: cover;
@@ -16,19 +25,26 @@
 h5 {
   margin: 0 15px;
 }
-.itembasket p {
-  position: absolute;
-  left: 10px;
-  top: -5px;
+.itembasket p,.itembasket h5,.itembasket span {
+  white-space: nowrap;
 }
-.close{
+.close {
   background: transparent;
-  border:none;
+  border: none;
   align-items: center;
   cursor: pointer;
+  width: 30px;
+  height: 20px;
 }
-
-.close img{
- width: 15px;
- height: 15px;
+.close img {
+  width: 100% !important;
+  height: 100% !important;
+}
+.btn{
+  border: 1px solid #000;
+  margin-right: 0.25rem;
+  background: transparent;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
 }

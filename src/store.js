@@ -41,8 +41,46 @@ const ItemsSlice = createSlice({
       );
       if (existingItem) {
         state.TotalAmount -= action.payload.ValueProduct.price;
-        existingItem.number=0;
-        existingItem.price =0;
+        existingItem.number = 0;
+        existingItem.price = 0;
+        if (existingItem.number === 0) {
+          state.ProductsItem = state.ProductsItem.filter(
+            (item) => item.id !== existingItem.id
+          );
+        }
+      }
+    },
+    InBasketAddItem: (state, action) => {
+      const existingItem = state.ProductsItem.find(
+        (item) => item.id === action.payload.ValueProduct.id
+      );
+      if (existingItem) {
+        existingItem.number++;
+        existingItem.price +=
+          action.payload.ValueProduct.price /
+          action.payload.ValueProduct.number;
+        state.TotalAmount +=
+          action.payload.ValueProduct.price /
+          action.payload.ValueProduct.number;
+      } else {
+        state.TotalAmount +=
+          action.payload.ValueProduct.price /
+          action.payload.ValueProduct.number;
+        state.ProductsItem.push(action.payload.ValueProduct);
+      }
+    },
+    InBasketRemoveItem: (state, action) => {
+      const existingItem = state.ProductsItem.find(
+        (item) => item.id === action.payload.ValueProduct.id
+      );
+      if (existingItem) {
+        existingItem.number--;
+        existingItem.price -=
+          action.payload.ValueProduct.price /
+          action.payload.ValueProduct.number;
+        state.TotalAmount -=
+          action.payload.ValueProduct.price /
+          action.payload.ValueProduct.number;
         if (existingItem.number === 0) {
           state.ProductsItem = state.ProductsItem.filter(
             (item) => item.id !== existingItem.id
@@ -53,7 +91,13 @@ const ItemsSlice = createSlice({
   },
 });
 
-export const { AddItem, RemoveItem ,DeleteItem} = ItemsSlice.actions;
+export const {
+  AddItem,
+  RemoveItem,
+  DeleteItem,
+  InBasketAddItem,
+  InBasketRemoveItem,
+} = ItemsSlice.actions;
 
 export const store = configureStore({
   reducer: {

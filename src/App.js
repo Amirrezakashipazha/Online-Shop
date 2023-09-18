@@ -1,7 +1,6 @@
 import Item from "./component/item";
 import style from "./app.module.css";
 import Header from "./component/header";
-import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Style from "./app.module.css";
 function App() {
@@ -106,8 +105,8 @@ function App() {
 
   const Products = useSelector((state) => state.products.ProductsItem);
 
-  localStorage.setItem("Products", JSON.stringify(Products));
-  console.log(JSON.parse(localStorage.getItem("Products")));
+  // localStorage.setItem("Products", JSON.stringify(Products));
+  // console.log(JSON.parse(localStorage.getItem("Products")));
 
   let items_shop = [];
   for (let i = 0; i < Products.length; i++) {

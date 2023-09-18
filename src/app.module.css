@@ -14,25 +14,23 @@ body {
   flex-wrap: wrap;
   margin-top: 100px;
 }
-
 .animation {
   animation: identifier 0.3s ease;
 }
 @keyframes identifier {
-0% {
-  transform: rotate(0);
-}
-
-25% {
-  transform:rotate(6deg);
-}
-50% {
-  transform:rotate(0deg);
-}
-75% {
-  transform:rotate(-6deg);
-}
-100% {
-  transform:rotate(0);
-}
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(3deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-3deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
 }

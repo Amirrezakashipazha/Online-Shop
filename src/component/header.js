@@ -39,22 +39,24 @@ const Header = () => {
   return (
     <div className={Style.header}>
       <h1>Logo</h1>
-      <button
-        className={`${Style.btn} btn-header`}
-        onClick={() =>
-          setState(() => {
-            if (state) {
-              setState(false);
-            } else {
-              setState(true);
-            }
-          })
-        }
-      >
-        basket
-        <span className={ClassBasket}>{TotalNumber}</span>
-      </button>
-      {state && <Basket />}
+      <div className={Style.container}>
+        <button
+          className={`${Style.btn} btn-header`}
+          onClick={() =>
+            setState(() => {
+              if (state) {
+                setState(false);
+              } else {
+                setState(true);
+              }
+            })
+          }
+        >
+          basket
+          <span className={ClassBasket}>{TotalNumber}</span>
+        </button>
+        {state && <Basket />}
+      </div>
     </div>
   );
 };
