@@ -5,7 +5,6 @@ import { InBasketAddItem, InBasketRemoveItem } from "../store";
 
 const Basket = () => {
   const Products = useSelector((state) => state.products.ProductsItem);
-  console.log(Products);
   const TotalAmount = useSelector((state) => state.products.TotalAmount);
   const Dispath = useDispatch();
   return (
