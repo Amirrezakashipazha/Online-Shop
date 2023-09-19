@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   width: 20vw;
-  padding: 6px;
+  /* padding: 6px; */
   margin-bottom: 3vw;
   box-shadow: 0px -1px 10px 3px rgb(230, 230, 230);
 }
@@ -32,10 +32,11 @@
   cursor: pointer;
 }
 .item div {
-  width: 100%;
+  width: calc(100% - 12px);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 6px;
 }
 .item div button {
   border: none;

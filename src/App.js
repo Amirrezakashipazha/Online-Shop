@@ -114,6 +114,15 @@ function App() {
     items_shop.push(Products[i].id);
   }
 
+  let items_shop_number = [];
+  for (let i = 0; i < Products.length; i++) {
+    items_shop_number.push({
+      id: Products[i].id,
+      number: Products[i].number,
+    });
+  }
+  console.log(items_shop_number);
+
   return (
     <>
       <div className={style.App}>
@@ -128,7 +137,14 @@ function App() {
                 id_item={item.id}
                 number_item={item.number}
                 price_item={item.price}
-                added_item={items_shop.includes(item.id) ? "added !!!" : ""}
+                numberOfProduct_item={
+                  items_shop_number.find((obj) => obj.id === item.id)
+                    ? `added ${
+                        items_shop_number.find((obj) => obj.id === item.id)
+                          .number
+                      } item`
+                    : ""
+                }
                 style_item={
                   items_shop.includes(item.id)
                     ? { background: "rgb(160, 219, 160)" }

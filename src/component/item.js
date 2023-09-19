@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import style from "./item.module.css";
 import { AddItem, RemoveItem } from "../store";
 
@@ -10,18 +10,19 @@ const Item = ({
   id_item,
   number_item,
   style_item,
-  added_item,
   class_item,
+  numberOfProduct_item,
 }) => {
-  const Dispatch = useDispatch();
 
+  const Dispatch = useDispatch();
+  
   return (
-    <div className={`${style.item} ${class_item}`} style={style_item}>
+    <div className={`${style.item} ${class_item}`}>
       <img className={style.widthimg} src={img_item} alt="img-item" />
       <h4>{name_item}</h4>
-      <h5>{added_item}</h5>
+      <h5>{numberOfProduct_item}</h5>
       <p>{descraption_item}</p>
-      <div>
+      <div style={style_item}>
         <button
           className={style.btn}
           onClick={() =>
@@ -41,6 +42,7 @@ const Item = ({
         >
           +
         </button>
+  
         <span>${price_item}</span>
         <button
           className={style.btn}
