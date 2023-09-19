@@ -23,6 +23,7 @@
 }
 .basket::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
   border-radius: 50px;
   background: #e2e2e2;
 }

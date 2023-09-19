@@ -1,9 +1,11 @@
-import React from "react";
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 const ItemsSlice = createSlice({
   name: "products",
-  initialState: { ProductsItem: [], TotalAmount: 0 },
+  initialState: {
+    ProductsItem: JSON.parse(localStorage.getItem("Products")) || [],
+    TotalAmount: JSON.parse(localStorage.getItem("TotalAmount")) || 0,
+  },
   reducers: {
     AddItem: (state, action) => {
       const existingItem = state.ProductsItem.find(
@@ -18,6 +20,8 @@ const ItemsSlice = createSlice({
         state.TotalAmount += action.payload.ValueProduct.price;
         state.ProductsItem.push(action.payload.ValueProduct);
       }
+      localStorage.setItem("TotalAmount", state.TotalAmount);
+      localStorage.setItem("Products", JSON.stringify(state.ProductsItem));
     },
     RemoveItem: (state, action) => {
       const existingItem = state.ProductsItem.find(
@@ -34,6 +38,8 @@ const ItemsSlice = createSlice({
           );
         }
       }
+      localStorage.setItem("TotalAmount", state.TotalAmount);
+      localStorage.setItem("Products", JSON.stringify(state.ProductsItem));
     },
     DeleteItem: (state, action) => {
       const existingItem = state.ProductsItem.find(
@@ -49,6 +55,8 @@ const ItemsSlice = createSlice({
           );
         }
       }
+      localStorage.setItem("TotalAmount", state.TotalAmount);
+      localStorage.setItem("Products", JSON.stringify(state.ProductsItem));
     },
     InBasketAddItem: (state, action) => {
       const existingItem = state.ProductsItem.find(
@@ -68,6 +76,8 @@ const ItemsSlice = createSlice({
           action.payload.ValueProduct.number;
         state.ProductsItem.push(action.payload.ValueProduct);
       }
+      localStorage.setItem("TotalAmount", state.TotalAmount);
+      localStorage.setItem("Products", JSON.stringify(state.ProductsItem));
     },
     InBasketRemoveItem: (state, action) => {
       const existingItem = state.ProductsItem.find(
@@ -87,6 +97,8 @@ const ItemsSlice = createSlice({
           );
         }
       }
+      localStorage.setItem("TotalAmount", state.TotalAmount);
+      localStorage.setItem("Products", JSON.stringify(state.ProductsItem));
     },
   },
 });
