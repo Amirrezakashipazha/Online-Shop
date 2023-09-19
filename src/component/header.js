@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Style from "./header.module.css";
 import Basket from "./basket";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { ClearBasket } from "../store";
 
 const Header = () => {
   const [state, setState] = useState(false);
   const [ClassBasket, setClassBasket] = useState();
-
+  const Dispatch=useDispatch();
   const Products = useSelector((state) => state.products.ProductsItem);
   let TotalNumber = 0;
   for (let i = 0; i < Products.length; i++) {

@@ -100,6 +100,12 @@ const ItemsSlice = createSlice({
       localStorage.setItem("TotalAmount", state.TotalAmount);
       localStorage.setItem("Products", JSON.stringify(state.ProductsItem));
     },
+    ClearBasket: (state) => {
+      state.ProductsItem = [];
+      state.TotalAmount = 0;
+      localStorage.removeItem("TotalAmount")
+      localStorage.removeItem("Products")
+    },
   },
 });
 
@@ -109,6 +115,7 @@ export const {
   DeleteItem,
   InBasketAddItem,
   InBasketRemoveItem,
+  ClearBasket
 } = ItemsSlice.actions;
 
 export const store = configureStore({

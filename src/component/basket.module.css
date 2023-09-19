@@ -10,15 +10,24 @@
   right: 0;
   top: 40px;
 }
+.header-basket {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-basket button {
+  border: 1px solid #000;
+  background: #fff;
+  padding: 6px 12px;
+}
 @media (max-width: 568px) {
   .basket {
     min-width: 100%;
     width: 80vw;
     /* margin: 3vw 0 0 3vw;
      */
-     right: -40px;
-  overflow-x: scroll;
-
+    right: -40px;
+    overflow-x: scroll;
   }
 }
 .basket::-webkit-scrollbar {

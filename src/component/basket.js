@@ -1,15 +1,17 @@
 import { useDispatch, useSelector } from "react-redux";
 import style from "./basket.module.css";
 import ItemBasket from "./itembasket";
-import { InBasketAddItem, InBasketRemoveItem } from "../store";
-
+import { ClearBasket, InBasketAddItem, InBasketRemoveItem } from "../store";
 const Basket = () => {
   const Products = useSelector((state) => state.products.ProductsItem);
   const TotalAmount = useSelector((state) => state.products.TotalAmount);
-  const Dispath = useDispatch();
+  const Dispatch = useDispatch();
   return (
     <div className={style.basket} id="basket-header">
-      <h3>TotalAmount : ${TotalAmount}</h3>
+      <div className={style["header-basket"] }>
+        <h3>TotalAmount : ${TotalAmount}</h3>
+        <button onClick={() => Dispatch(ClearBasket())}>clear basket</button>
+      </div>
       {Products.map((item) => (
         <ItemBasket
           id={item.id}
@@ -19,7 +21,7 @@ const Basket = () => {
           number={item.number}
           price={item.price}
           onAdd={() =>
-            Dispath(
+            Dispatch(
               InBasketAddItem({
                 ValueProduct: {
                   id: item.id,
@@ -33,7 +35,7 @@ const Basket = () => {
             )
           }
           onRemove={() =>
-            Dispath(
+            Dispatch(
               InBasketRemoveItem({
                 ValueProduct: {
                   id: item.id,

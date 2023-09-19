@@ -106,9 +106,6 @@ function App() {
 
   const Products = useSelector((state) => state.products.ProductsItem);
 
-  // localStorage.setItem("Products", JSON.stringify(Products));
-  // console.log(JSON.parse(localStorage.getItem("Products")));
-
   let items_shop = [];
   for (let i = 0; i < Products.length; i++) {
     items_shop.push(Products[i].id);
@@ -121,7 +118,6 @@ function App() {
       number: Products[i].number,
     });
   }
-  console.log(items_shop_number);
 
   return (
     <>
