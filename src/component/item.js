@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import style from "./item.module.css";
 import { AddItem, RemoveItem } from "../store";
 
