@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Style from "./header.module.css";
-import Basket from "./basket";
+import Basket from "../basket/basket";
 import { useSelector } from "react-redux";
 
 const Header = () => {
@@ -36,25 +36,27 @@ const Header = () => {
   }, [Products]);
 
   return (
-    <div className={Style.header}>
-      <h1>Logo</h1>
-      <div className={Style.container}>
-        <button
-          className={`${Style.btn} btn-header`}
-          onClick={() =>
-            setState(() => {
-              if (state) {
-                setState(false);
-              } else {
-                setState(true);
-              }
-            })
-          }
-        >
-          basket
-          <span className={ClassBasket}>{TotalNumber}</span>
-        </button>
-        {state && <Basket />}
+    <div className={Style["container-header"]}>
+      <div className={Style.header}>
+        <h1>Logo</h1>
+        <div className={Style.container}>
+          <button
+            className={`${Style.btn} btn-header`}
+            onClick={() =>
+              setState(() => {
+                if (state) {
+                  setState(false);
+                } else {
+                  setState(true);
+                }
+              })
+            }
+          >
+            basket
+            <span className={ClassBasket}>{TotalNumber}</span>
+          </button>
+          {state && <Basket />}
+        </div>
       </div>
     </div>
   );

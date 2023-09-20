@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import style from "./basket.module.css";
-import ItemBasket from "./itembasket";
-import { ClearBasket, InBasketAddItem, InBasketRemoveItem } from "../store";
+import ItemBasket from "../itemBasket/itembasket";
+import { ClearBasket, InBasketAddItem, InBasketRemoveItem } from "../../store";
 const Basket = () => {
   const Products = useSelector((state) => state.products.ProductsItem);
   const TotalAmount = useSelector((state) => state.products.TotalAmount);

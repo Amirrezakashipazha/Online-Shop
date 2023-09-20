@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Modal from "./component/Modal/Modal";
 import { useSelector } from "react-redux";
-import style from "../src/component/item.module.css";
+import style from "../src/component/item/item.module.css";
 
 const LimitasionOfLocalStorage = () => {
   const [state, setState] = useState(false);

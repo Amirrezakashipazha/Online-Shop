@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import style from "./item.module.css";
-import { AddItem, RemoveItem } from "../store";
+import { AddItem, RemoveItem } from "../../store";
 
 const Item = ({
   price_item,

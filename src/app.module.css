@@ -3,6 +3,14 @@ body {
   margin: 0;
   padding: 0;
 }
+body::-webkit-scrollbar {
+  width: 6px;
+  background: rgba(0, 0, 0, 0.1);
+}
+body::-webkit-scrollbar-thumb {
+  width: 6px;
+  background: rgba(0, 0, 0, 0.3);
+}
 .App {
   display: flex;
   flex-direction: column;
@@ -10,9 +18,16 @@ body {
 }
 .containerItem {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   flex-wrap: wrap;
-  margin-top: 100px;
+  margin: 30px auto;
+  max-width: calc(1200px - 40px);
+  padding: 0 20px;
+}
+@media (min-width: 400px) {
+  .containerItem {
+    justify-content: space-between;
+  }
 }
 .animation {
   animation: identifier 0.3s ease;

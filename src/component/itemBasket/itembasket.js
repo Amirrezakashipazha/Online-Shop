@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import style from "./itembasket.module.css";
-import { DeleteItem } from "../store";
+import { DeleteItem } from "../../store";
 const ItemBasket = ({ name, img, number = 1, price, id, onAdd, onRemove }) => {
   const Dispatch = useDispatch();
   return (
@@ -28,10 +28,11 @@ const ItemBasket = ({ name, img, number = 1, price, id, onAdd, onRemove }) => {
 
         <img src={img} alt="" />
         <h5>{name}</h5>
-        <span>number : {number}</span>
+        {/* <span>number : {number}</span> */}
         <button onClick={onAdd} className={style.btn}>
           +
         </button>
+        <span className={style.span}>{number}</span>
         <button onClick={onRemove} className={style.btn}>
           -
         </button>

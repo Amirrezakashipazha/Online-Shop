@@ -1,6 +1,6 @@
-import Item from "./component/item";
+import Item from "./component/item/item";
 import style from "./app.module.css";
-import Header from "./component/header";
+import Header from "./component/header/header";
 import { useSelector } from "react-redux";
 import Style from "./app.module.css";
 import LimitasionOfLocalStorage from "./storage";
@@ -125,30 +125,28 @@ function App() {
         <Header />
         <div className={style.containerItem}>
           {data.map((item) => (
-            <div key={item.id}>
-              <Item
-                descraption_item={item.description}
-                img_item={item.img}
-                name_item={item.name}
-                id_item={item.id}
-                number_item={item.number}
-                price_item={item.price}
-                numberOfProduct_item={
-                  items_shop_number.find((obj) => obj.id === item.id)
-                    ? `added ${
-                        items_shop_number.find((obj) => obj.id === item.id)
-                          .number
-                      } item`
-                    : ""
-                }
-                style_item={
-                  items_shop.includes(item.id)
-                    ? { background: "rgb(160, 219, 160)" }
-                    : { background: "" }
-                }
-                class_item={items_shop.includes(item.id) ? Style.animation : ""}
-              />
-            </div>
+            <Item
+              key={item.id}
+              descraption_item={item.description}
+              img_item={item.img}
+              name_item={item.name}
+              id_item={item.id}
+              number_item={item.number}
+              price_item={item.price}
+              numberOfProduct_item={
+                items_shop_number.find((obj) => obj.id === item.id)
+                  ? `added ${
+                      items_shop_number.find((obj) => obj.id === item.id).number
+                    } item`
+                  : ""
+              }
+              style_item={
+                items_shop.includes(item.id)
+                  ? { background: "rgb(160, 219, 160)" }
+                  : { background: "" }
+              }
+              class_item={items_shop.includes(item.id) ? Style.animation : ""}
+            />
           ))}
         </div>
       </div>

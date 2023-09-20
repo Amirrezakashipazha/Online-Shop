@@ -19,6 +19,7 @@
   border: 1px solid #000;
   background: #fff;
   padding: 6px 12px;
+  cursor: pointer;
 }
 @media (max-width: 568px) {
   .basket {
@@ -26,7 +27,7 @@
     width: 80vw;
     /* margin: 3vw 0 0 3vw;
      */
-    right: -40px;
+    right: 0;
     overflow-x: scroll;
   }
 }
